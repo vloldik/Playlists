@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "81108078286",
+    "project_id": "activities-58ec1",
+    "storage_bucket": "activities-58ec1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81108078286:android:73ec07bbcdd4ba6e9e4a9f",
+        "android_client_info": {
+          "package_name": "ru.vladik.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "81108078286-bp1phea91e07taamv4j01sde4nuofbu4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6Lvx0koMb4-mcwOw67QIk99rMMbqFgwA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "81108078286-bp1phea91e07taamv4j01sde4nuofbu4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

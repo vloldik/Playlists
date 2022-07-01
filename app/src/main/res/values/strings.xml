@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Playlists</string>
+    <string name="firebase_web_cl_id">81108078286-bp1phea91e07taamv4j01sde4nuofbu4.apps.googleusercontent.com</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="you_logged_in_as">Вы вошли как</string>
+    <string name="log_in">Войти</string>
+    <string name="using_as_default">Используется по умолчанию</string>
+    <string name="confirming">Подтверждение</string>
+    <string name="are_you_sure_to_live">Вы уверены, что хотите выйти?</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+
+    <string name="one_track">трек</string>
+    <string name="two_three_etc">трека</string>
+    <string name="five_six_etc">треков</string>
+
+    <string name="userVkPlaylistName">Ваши аудио</string>
+    <string name="userVkPlaylistDescription">Автоматически созданный плейлист</string>
+</resources>
