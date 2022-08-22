@@ -1,12 +1,8 @@
 package ru.vladik.playlists.activities
 
-import android.content.ComponentName
-import android.content.Context
 import android.content.Intent
-import android.content.ServiceConnection
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.IBinder
 import android.util.Log
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
@@ -21,11 +17,10 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import ru.vladik.playlists.R
-import ru.vladik.playlists.api.lastfm.LastFmApi
-import ru.vladik.playlists.constants.Strings
 import ru.vladik.playlists.api.playlists.User
+import ru.vladik.playlists.dataclasses.musicservises.VkMusicService
 import ru.vladik.playlists.extensions.UserExtensions.exists
-import ru.vladik.playlists.services.VladikMusicPlayService
+import ru.vladik.playlists.sqlite.PlatformRegistrationSqlHelper
 import ru.vladik.playlists.utils.*
 
 
@@ -36,31 +31,11 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var signInButton: SignInButton
 
-    private val serviceConnection = object : ServiceConnection {
-        override fun onServiceConnected(p0: ComponentName, service: IBinder) {
-            val binder: VladikMusicPlayService.ServiceBinder = service as VladikMusicPlayService.ServiceBinder
-            Constants.musicPlayService = binder.getService()
-        }
-
-        override fun onServiceDisconnected(p0: ComponentName?) {
-            Constants.musicPlayService = null
-        }
-    }
-
-    override fun onStart() {
-        super.onStart()
-        val playIntent = Intent(this, VladikMusicPlayService::class.java)
-        bindService(playIntent, serviceConnection, Context.BIND_AUTO_CREATE)
-        startService(playIntent)
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         firebaseAuth = FirebaseAuth.getInstance()
         signInButton = findViewById(R.id.login_with_google)
-
-        MusicServicesUtil.initServicesVariables()
 
         if (firebaseAuth.currentUser == null) {
             signInButton.visibility = View.VISIBLE
@@ -110,6 +85,8 @@ class LoginActivity : AppCompatActivity() {
     private fun firebaseAuthWithGoogle(acct: GoogleSignInAccount) {
         val credential = GoogleAuthProvider.getCredential(acct.idToken, null)
         firebaseAuth.signInWithCredential(credential).addOnCompleteListener{
+            Log.d("main", "success")
+
             if (it.isSuccessful) {
                 prepareForStartMain(firebaseAuth.currentUser)
             } else {
@@ -119,7 +96,9 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun prepareForStartMain(firebaseUser: FirebaseUser?) {
+
         FirebaseUtil.getUser(firebaseUser?.uid.toString()).addOnCompleteListener {
+
             var user = it.result.getValue(User::class.java)
             if (user == null) {
                 user = User(id = firebaseUser?.uid.toString(),
@@ -128,15 +107,10 @@ class LoginActivity : AppCompatActivity() {
                 FirebaseUtil.setUser(user)
             }
             if (user.exists()) {
-                Constants.user = user
-                Constants.lastFmService = LastFmApi(Strings.LAST_FM_API_KEY).getService()
-                val vkToken = SharedPreferences.getVkUserToken(this)
+                val vkToken = PlatformRegistrationSqlHelper(this).getServiceRegistrationInfo(VkMusicService)?.token
                 if (vkToken != null) {
-                    AsyncUtils.asyncLaunch({
-                        MusicServicesUtil.logIn(AppServices.vk, this, vkToken)
-                    }, {
-                        startMainAndFinish()
-                    })
+                    LoginUtil.vkLogIn(this, vkToken)
+                    startMainAndFinish()
                 } else {
                     startMainAndFinish()
                 }

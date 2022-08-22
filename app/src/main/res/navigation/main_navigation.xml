@@ -7,14 +7,8 @@
 
     <fragment
         android:id="@+id/main_fragment"
-        android:name="ru.vladik.playlists.fragments.main_fragment"
+        android:name="ru.vladik.playlists.fragments.MainFragment"
         android:label="main_fragment"
         tools:layout="@layout/fragment_main"/>
-
-    <fragment
-        android:id="@+id/self_info_fragment"
-        android:name="ru.vladik.playlists.fragments.self_info_fragment"
-        android:label="self_info_fragment"
-        tools:layout="@layout/fragment_self_info"/>
 
 </navigation>

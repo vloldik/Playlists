@@ -4,7 +4,7 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import ru.vladik.playlists.constants.Strings
+import ru.vladik.playlists.constants.LAST_FM_API_BASE_URL
 
 class LastFmApi(private val token: String) {
 
@@ -17,7 +17,7 @@ class LastFmApi(private val token: String) {
 
     fun getService(): LastFmService {
         val client = Retrofit.Builder()
-            .baseUrl(Strings.LAST_FM_API_BASE_URL)
+            .baseUrl(LAST_FM_API_BASE_URL)
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)

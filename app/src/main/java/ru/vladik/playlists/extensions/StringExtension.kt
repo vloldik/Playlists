@@ -1,10 +1,10 @@
 package ru.vladik.playlists.extensions
 
-import ru.vladik.playlists.constants.Strings
+import ru.vladik.playlists.constants.DEFAULT_STRING
 
 object StringExtension {
 
     fun String.isDefault(): Boolean {
-        return this == Strings.DEFAULT_STRING
+        return this == DEFAULT_STRING
     }
 }

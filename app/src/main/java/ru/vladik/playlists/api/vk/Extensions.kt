@@ -2,24 +2,31 @@ package ru.vladik.playlists.api.vk
 
 import android.util.Log
 import retrofit2.Call
+import retrofit2.http.GET
+import retrofit2.http.Query
+import ru.vladik.playlists.api.vk.models.AlbumsResponse
 import ru.vladik.playlists.api.vk.models.Track
 import ru.vladik.playlists.api.vk.models.TrackListResponse
 import ru.vladik.playlists.api.vk.models.TracksResponse
 
-fun VkService.getAudioWithUrl(track: Track): Call<TrackListResponse> {
-    val ids = "${track.ownerId}_${track.tId}"
-    val code = "return API.audio.getById({\"audios\": \"$ids\"});"
-    return executeForTrackListResponse(code)
+fun VkService.getAllAudios(ownerId: String? = null, albumId: String? = null): Call<TracksResponse> {
+    val code = StringBuilder()
+    code.append("return ")
+    fun getAudioCode(count: String) = StringBuilder().apply {
+        append("API.audio.get({")
+        append("owner_id:")
+        if (ownerId == null) append("API.users.get()[0].id") else append(ownerId)
+        append(",")
+        if (albumId != null) append("album_id: $albumId,")
+        append("count: $count")
+        append("})")
+    }
+    code.append(getAudioCode(getAudioCode("1").append(".count").toString()))
+    code.append(";")
+    return executeForTrackListResponse(code.toString())
 }
 
-fun VkService.getAudiosWithUrl(tracks: MutableList<Track>): Call<TrackListResponse> {
-    val ids = StringBuilder()
-    for (item in tracks) {
-        if (item.contentRestricted != 1) {
-            ids.append("${item.ownerId}_${item.tId},")
-        }
-    }
-    val code = "return API.audio.getById({\"audios\": \"[0,$ids]\"});"
-    Log.d("main", code)
-    return executeForTrackListResponse(code)
+fun VkService.getUserAlbums(count: Int = 0, offset: Int = 0) : Call<AlbumsResponse> {
+    val code = "return API.audio.getPlaylists({owner_id:API.users.get()[0].id, count:$count, offset:$offset});"
+    return executeForAlbumListResponse(code)
 }

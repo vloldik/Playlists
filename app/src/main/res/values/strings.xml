@@ -17,4 +17,7 @@
 
     <string name="userVkPlaylistName">Ваши аудио</string>
     <string name="userVkPlaylistDescription">Автоматически созданный плейлист</string>
+    <string name="media_notification_channel_name">Сейчас играет</string>
+    <string name="media_notification_channel_description">Уведомление для музыки</string>
+    <string name="unaviable">недоступно</string>
 </resources>

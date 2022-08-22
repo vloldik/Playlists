@@ -3,15 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/vlado/.gradle/caches/transforms-3/49dc0a16d7b2234abbe5c73913132ce0/transformed/media-1.4.3/res/layout/notification_media_action.xml" value="0.1984375" />
         <entry key="..\:/Users/vlado/.gradle/caches/transforms-3/61c36d7dcdeafc3aa99481f0f0548cbd/transformed/media-1.0.0/res/layout/notification_media_action.xml" value="0.22239583333333332" />
         <entry key="..\:/Users/vlado/.gradle/caches/transforms-3/61c36d7dcdeafc3aa99481f0f0548cbd/transformed/media-1.0.0/res/layout/notification_template_media.xml" value="0.22239583333333332" />
         <entry key="..\:/Users/vlado/.gradle/caches/transforms-3/cb96c4ca748e404272842399af61a491/transformed/core-1.7.0/res/layout-v21/notification_action_tombstone.xml" value="0.22239583333333332" />
         <entry key="..\:/Users/vlado/.gradle/caches/transforms-3/cb96c4ca748e404272842399af61a491/transformed/core-1.7.0/res/layout/notification_template_icon_group.xml" value="0.22239583333333332" />
+        <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/drawable/circle_button_bg.xml" value="0.17239583333333333" />
+        <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.193" />
         <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/drawable/ic_baseline_keyboard_arrow_down_24.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/drawable/ic_vk_svgrepo_com.xml" value="0.23802083333333332" />
         <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/drawable/lastfm_logo.xml" value="0.23802083333333332" />
+        <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/drawable/play.xml" value="0.21458333333333332" />
         <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/drawable/playlist.xml" value="0.24166666666666667" />
         <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/drawable/playlist_logo.xml" value="0.22604166666666667" />
+        <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/drawable/progress_drawable.xml" value="0.2" />
         <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/drawable/rounded_button_background.xml" value="0.21458333333333332" />
         <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/drawable/solid_rounded.xml" value="0.23802083333333332" />
         <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/drawable/track.xml" value="0.23854166666666668" />
@@ -19,17 +24,30 @@
         <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/drawable/vk_logo.xml" value="0.23802083333333332" />
         <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/activity_playlist.xml" value="0.25" />
+        <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/activity_playlist.xml" value="0.1797752808988764" />
+        <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/activity_track.xml" value="0.1375" />
         <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/activity_vk_auth.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/album_element_back.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/album_element_flip.xml" value="0.25" />
+        <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/album_element_with_image_small.xml" value="0.37289915966386555" />
+        <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/album_element_with_image_small_1.xml" value="0.18489583333333334" />
+        <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/backside_action.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/bottom_player_view.xml" value="0.10420284821118445" />
+        <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/filter_popup_window.xml" value="0.25" />
         <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/fragment_main.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/fragment_playlist_list.xml" value="0.20989583333333334" />
+        <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/fragment_playlist_list.xml" value="0.22" />
         <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/fragment_self_info.xml" value="0.33" />
+        <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/fullscreen_player_view.xml" value="0.22" />
+        <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/list_preview.xml" value="0.2734375" />
         <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/loading_layput.xml" value="0.22864583333333333" />
         <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/notification_playing.xml" value="0.45454545454545453" />
-        <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/rounded_album_element_with_image.xml" value="0.20989583333333334" />
+        <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/platform_spiner_item.xml" value="0.21302083333333333" />
+        <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/rounded_album_element_with_image.xml" value="0.3441011235955056" />
         <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/rounded_element_with_image.xml" value="0.39444444444444443" />
+        <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/search_header.xml" value="0.2140625" />
+        <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/searchview_with_picker.xml" value="0.25" />
         <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/toolbar.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/track_element.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/track_element.xml" value="0.40553745928338764" />
         <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/layout/web_view_layout.xml" value="0.228125" />
         <entry key="..\:/Users/vlado/AndroidStudioProjects/MyApplication8/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.36666666666666664" />
       </map>

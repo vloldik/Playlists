@@ -5,9 +5,4 @@
         android:icon="@drawable/ic_launcher_background"
         android:title="Главная" />
 
-    <item
-        android:id="@id/self_info_fragment"
-        android:icon="@drawable/ic_launcher_background"
-        android:title="Инфо" />
-
 </menu>

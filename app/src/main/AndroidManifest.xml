@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ru.vladik.playlists" >
+    package="ru.vladik.playlists">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <permission android:name="android.permission.MEDIA_CONTENT_CONTROL" />
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:allowBackup="true"
@@ -15,18 +16,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
-        android:usesCleartextTraffic="true" >
-        <receiver android:name=".services.VMediaButtonReciever"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="android.intent.action.MEDIA_BUTTON" />
-            </intent-filter>
-        </receiver>
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".activities.TrackActivity"
+            android:exported="false" />
+
         <service
-            android:name=".services.VladikMusicPlayService"
+            android:name=".musicservice.VMusicPlayService"
             android:enabled="true"
-            android:exported="false" >
-        </service>
+            android:exported="false"></service>
 
         <activity
             android:name=".activities.PlaylistActivity"
@@ -39,13 +37,15 @@
             android:exported="false" />
         <activity
             android:name=".activities.LoginActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".activities.UsersPlaylistsActivity" android:exported="false"/>
     </application>
 
 </manifest>

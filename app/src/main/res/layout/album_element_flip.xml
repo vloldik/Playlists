@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.wajahatkarim3.easyflipview.EasyFlipView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/flip_view1"
+    android:layout_width="170dp"
+    android:layout_height="150dp"
+    app:flipOnTouch="false"
+    app:flipEnabled="true"
+    app:flipDuration="400"
+    app:flipFrom="right"
+    app:flipType="horizontal"
+    app:autoFlipBack="false">
+
+    <include layout="@layout/album_element_back"/>
+
+    <include layout="@layout/album_element_with_image_small"/>
+
+</com.wajahatkarim3.easyflipview.EasyFlipView>

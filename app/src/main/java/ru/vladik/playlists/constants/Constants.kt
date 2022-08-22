@@ -1,48 +1,17 @@
-package ru.vladik.playlists.utils
+package ru.vladik.playlists.constants
 
-import android.content.Context
-import android.util.Log
-import ru.vladik.playlists.R
-import ru.vladik.playlists.activities.VkAuthActivity
-import ru.vladik.playlists.api.lastfm.LastFmService
-import ru.vladik.playlists.api.playlists.Playlist
-import ru.vladik.playlists.api.playlists.User
-import ru.vladik.playlists.api.vk.models.User as VkUser
-import ru.vladik.playlists.api.vk.models.Album as VkAlbum
-import ru.vladik.playlists.api.vk.VkService
-import ru.vladik.playlists.constants.Strings
-import ru.vladik.playlists.dataclasses.MusicService
-import ru.vladik.playlists.services.VladikMusicPlayService
+import ru.vladik.playlists.dataclasses.Photo
+import ru.vladik.playlists.dataclasses.albums.AlbumModel
+import ru.vladik.playlists.dataclasses.musicservises.VkMusicService
 
-object Constants {
-    fun getVkUserAudiosAsPlaylist(context: Context, vkUser: VkUser, count: Int) : VkAlbum {
-        return VkAlbum(
-            -1, context.getString(R.string.userVkPlaylistName), vkUser.id, -1,
-            context.getString(R.string.userVkPlaylistDescription),
-            count, -1, -1, -1, -1, ArrayList(),
-            null, false, "", ""
-        )
-    }
-
-    lateinit var user: User
-
-    var vkUser: VkUser? = null
-        set(user) {
-            MusicServicesUtil.notifyUserChanged(AppServices.vk)
-            field = user
-        }
-
-    lateinit var lastFmService: LastFmService
-    var musicPlayService: VladikMusicPlayService? = null
-    var vkService: VkService? = null
-
+object UserAudiosAsPlaylist : AlbumModel() {
+    override var id = ""
+    override var title = "Ваши аудио"
+    override var description = "Автоматически созданный плейлист"
+    override var count = -1
+    override val photo: Photo? = null
+    override val service = VkMusicService
+    override val isEnabled = true
+    override var ownerId: String = ""
 }
 
-object AppServices {
-    var lastFm = MusicService(Strings.LAST_FM_MUSIC_SERVICE_NAME)
-    var vk = MusicService(Strings.VK_MUSIC_SERVICE_NAME)
-
-    fun getServicesList(): Array<MusicService> {
-        return arrayOf(lastFm, vk)
-    }
-}
